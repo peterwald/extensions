@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.IO;
+using System.Runtime.CompilerServices;
 using Microsoft.Extensions.Configuration;
 
 namespace Microsoft.Extensions.AI.Evaluation.Integration.Tests;
@@ -31,9 +33,9 @@ public class Settings
             config.GetValue<string>("Endpoint") ??
             throw new ArgumentNullException(nameof(Endpoint));
 
-        StorageRootPath =
+        StorageRootPath = GetPathRelativeToRepoRoot(
             config.GetValue<string>("StorageRootPath") ??
-            throw new ArgumentNullException(nameof(StorageRootPath));
+            throw new ArgumentNullException(nameof(StorageRootPath)));
 #pragma warning restore CA2208
     }
 
@@ -58,5 +60,17 @@ public class Settings
             .Build();
 
         return new Settings(config);
+    }
+
+    private static string GetPathRelativeToRepoRoot(string filePath, [CallerFilePath] string? thisfilepath = null)
+    {
+        if (Path.IsPathRooted(filePath))
+        {
+            return filePath;
+        }
+
+        // NOTE! This gets the path relative to the repo root by using the location of this file in the tree.
+        // If this file is moved, the path below will need to be updated.
+        return Path.GetFullPath(Path.Combine(Path.GetDirectoryName(thisfilepath) ?? "", "..", "..", "..", filePath));
     }
 }

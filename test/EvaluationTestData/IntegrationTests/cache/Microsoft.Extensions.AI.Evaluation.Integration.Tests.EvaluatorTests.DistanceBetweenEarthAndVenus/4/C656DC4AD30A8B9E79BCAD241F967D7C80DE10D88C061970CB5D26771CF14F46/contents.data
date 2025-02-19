@@ -1,0 +1,33 @@
+{
+  "choices": [
+    {
+      "role": "assistant",
+      "contents": [
+        {
+          "$type": "text",
+          "text": "{\n    \"relevance\": 5,\n    \"relevanceReasoning\": \"100% of the response is 100% related to the request\",\n    \"relevanceReasons\": [],\n    \"truth\": 4,\n    \"truthReasoning\": \"Most of the response is true, but the distance at superior conjunction is slightly overstated. The correct distance is about 160 million miles, not 162 million miles.\",\n    \"truthReasons\": [\"truth_reason_incorrect_information\"],\n    \"completeness\": 5,\n    \"completenessReasoning\": \"The response includes all points that are necessary to address the request\",\n    \"completenessReasons\": []\n}"
+        }
+      ]
+    }
+  ],
+  "responseId": "chatcmpl-B2l3Mh0rQ1KWZPUCkeZ0nfXaP47hF",
+  "modelId": "gpt-4o-2024-05-13",
+  "createdAt": "2025-02-19T20:33:48+00:00",
+  "finishReason": "stop",
+  "usage": {
+    "inputTokenCount": 2679,
+    "outputTokenCount": 138,
+    "totalTokenCount": 2817,
+    "additionalCounts": {
+      "InputTokenDetails.AudioTokenCount": 0,
+      "InputTokenDetails.CachedTokenCount": 0,
+      "OutputTokenDetails.ReasoningTokenCount": 0,
+      "OutputTokenDetails.AudioTokenCount": 0,
+      "OutputTokenDetails.AcceptedPredictionTokenCount": 0,
+      "OutputTokenDetails.RejectedPredictionTokenCount": 0
+    }
+  },
+  "additionalProperties": {
+    "SystemFingerprint": "fp_b045b4af17"
+  }
+}

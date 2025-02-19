@@ -1,0 +1,33 @@
+{
+  "choices": [
+    {
+      "role": "assistant",
+      "contents": [
+        {
+          "$type": "text",
+          "text": "The distance between Earth and Venus varies significantly due to the elliptical orbits of both planets around the Sun. At their closest approach, known as inferior conjunction, Venus can be approximately 24 million miles (about 38 million kilometers) away from Earth. At their furthest point, known as superior conjunction, Venus can be about 162 million miles (approximately 261 million kilometers) away from Earth. These distances can vary slightly due to the specific orbital dynamics at any given time."
+        }
+      ]
+    }
+  ],
+  "responseId": "chatcmpl-B2l3JRZgCpWo2pSz2BjZWMOX3xGjm",
+  "modelId": "gpt-4o-2024-05-13",
+  "createdAt": "2025-02-19T20:33:45+00:00",
+  "finishReason": "stop",
+  "usage": {
+    "inputTokenCount": 26,
+    "outputTokenCount": 96,
+    "totalTokenCount": 122,
+    "additionalCounts": {
+      "InputTokenDetails.AudioTokenCount": 0,
+      "InputTokenDetails.CachedTokenCount": 0,
+      "OutputTokenDetails.ReasoningTokenCount": 0,
+      "OutputTokenDetails.AudioTokenCount": 0,
+      "OutputTokenDetails.AcceptedPredictionTokenCount": 0,
+      "OutputTokenDetails.RejectedPredictionTokenCount": 0
+    }
+  },
+  "additionalProperties": {
+    "SystemFingerprint": "fp_b045b4af17"
+  }
+}

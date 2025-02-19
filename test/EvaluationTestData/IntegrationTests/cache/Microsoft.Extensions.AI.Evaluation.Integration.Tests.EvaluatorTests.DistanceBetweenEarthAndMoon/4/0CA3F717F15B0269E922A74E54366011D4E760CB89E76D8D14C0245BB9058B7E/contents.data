@@ -1,0 +1,33 @@
+{
+  "choices": [
+    {
+      "role": "assistant",
+      "contents": [
+        {
+          "$type": "text",
+          "text": "The distance between the Earth and the Moon varies due to the Moon's elliptical orbit. At its closest point, known as perigee, the Moon is approximately 225,623 miles (363,300 kilometers) from Earth. At its furthest point, known as apogee, the Moon is about 252,088 miles (405,500 kilometers) from Earth. These distances can vary slightly due to gravitational influences and other factors."
+        }
+      ]
+    }
+  ],
+  "responseId": "chatcmpl-B2l30zwPeLxzhs3Mj4VAUFADYl9hp",
+  "modelId": "gpt-4o-2024-05-13",
+  "createdAt": "2025-02-19T20:33:26+00:00",
+  "finishReason": "stop",
+  "usage": {
+    "inputTokenCount": 25,
+    "outputTokenCount": 89,
+    "totalTokenCount": 114,
+    "additionalCounts": {
+      "InputTokenDetails.AudioTokenCount": 0,
+      "InputTokenDetails.CachedTokenCount": 0,
+      "OutputTokenDetails.ReasoningTokenCount": 0,
+      "OutputTokenDetails.AudioTokenCount": 0,
+      "OutputTokenDetails.AcceptedPredictionTokenCount": 0,
+      "OutputTokenDetails.RejectedPredictionTokenCount": 0
+    }
+  },
+  "additionalProperties": {
+    "SystemFingerprint": "fp_b045b4af17"
+  }
+}

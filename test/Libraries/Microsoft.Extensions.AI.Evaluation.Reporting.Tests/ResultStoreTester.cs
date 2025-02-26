@@ -15,7 +15,7 @@ public abstract class ResultStoreTester
 {
     public abstract IResultStore CreateResultStore();
 
-    public abstract bool IsConfigured { get; }
+    public abstract bool ShouldSkip { get; }
 
     private static ScenarioRunResult CreateTestResult(string scenarioName, string iterationName, string executionName)
     {
@@ -58,7 +58,7 @@ public abstract class ResultStoreTester
 
     private void SkipIfNotConfigured()
     {
-        if (!IsConfigured)
+        if (ShouldSkip)
         {
             throw new SkipTestException("Test not configured");
         }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>Microsoft.TestUtilities</AssemblyName>
@@ -16,6 +16,11 @@
       See https://xunit.github.io/docs/nuget-packages and the special note in https://xunit.github.io/releases/2.3.
     -->
     <PackageReference Include="xunit.extensibility.execution" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Libraries\Microsoft.Extensions.AI.Abstractions\Microsoft.Extensions.AI.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

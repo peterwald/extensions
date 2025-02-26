@@ -21,11 +21,11 @@ public abstract class ResponseCacheTester
 
     internal abstract IResponseCacheProvider CreateResponseCacheProvider();
     internal abstract IResponseCacheProvider CreateResponseCacheProvider(Func<DateTime> provideDateTime);
-    internal abstract bool IsConfigured { get; }
+    internal abstract bool ShouldSkip { get; }
 
     private void SkipIfNotConfigured()
     {
-        if (!IsConfigured)
+        if (ShouldSkip)
         {
             throw new SkipTestException("Test not configured");
         }

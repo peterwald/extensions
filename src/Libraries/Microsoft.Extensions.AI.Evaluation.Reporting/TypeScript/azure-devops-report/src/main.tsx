@@ -24,7 +24,9 @@ const ATTACHMENT_NAME = 'ai-eval-report';
 const ATTACHMENT_TYPE = 'ai-eval-report-json';
 
 const findReportAttachment = async (client: BuildRestClient, project: string, buildId: number) => {
+  console.log('[aieval] Finding report attachment...');
   const attachments = await client.getAttachments(project, buildId, ATTACHMENT_TYPE);
+  console.log('[aieval] Attachments found:', attachments);
   const att = attachments.find((attachment: Attachment) => attachment.name === ATTACHMENT_NAME);
   if (att && att._links && att._links.self && att._links.self.href) {
     return att._links.self.href;
@@ -44,6 +46,9 @@ const getReportData = async (client: BuildRestClient, project: string, buildId: 
     }
 
     const dataset = await response.json() as Dataset;
+    
+    console.log('[aieval] Report data loaded.', dataset);
+
     if (!dataset) {
       throw new Error('No data was returned from AI evaluation data pipeline attachment.');
     }
@@ -52,11 +57,12 @@ const getReportData = async (client: BuildRestClient, project: string, buildId: 
   
 };
 
-
 const run = async () => {
 
   await SDK.init();
   await SDK.ready();
+
+  console.log('[aieval] Azure DevOps SDK initialized.');
 
   const config = SDK.getConfiguration();
   config.onBuildChanged(async (build: Build) => {

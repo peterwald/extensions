@@ -311,7 +311,10 @@ body:has(.fluent-dark), body:has([data-theme="dark"]) { background: rgb(30, 30, 
   --status-success-background-2: var(--palette-green-background2);
   --status-success-background-3: var(--palette-green-background3);
 
-  --status-warning-foreground-1: var(--palette-orange-foreground1);
+  /* Darkened from --palette-orange-foreground1 (#bc4b09): warning/caution text is
+     rendered on the tinted StatusPill background, which drops #bc4b09 to 4.33:1.
+     #a34500 keeps it above the 4.5:1 WCAG 1.4.3 AA threshold on every surface. */
+  --status-warning-foreground-1: #a34500;
   --status-warning-foreground-2: var(--palette-orange-foreground2);
   --status-warning-background-1: var(--palette-yellow-background1);
   --status-warning-background-2: var(--palette-yellow-background2);

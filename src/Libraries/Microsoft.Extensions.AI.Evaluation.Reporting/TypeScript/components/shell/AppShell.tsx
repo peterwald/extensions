@@ -375,6 +375,11 @@ const PivotBar = ({ casesCount }: { casesCount: number }) => {
     const classes = useStyles();
     const { view, setView } = useReportContext();
     // Every tab must keep tabIndex={0} for the Tabster Mover — a roving tabIndex kills arrow-nav.
+    // Note: Tabster (via Fluent) injects `<i data-tabster-dummy aria-hidden="true" tabindex="0">`
+    // focus sentinels around Movers, and Modalizer adds two more under <body> for Drawer/Dropdown/
+    // Tooltip. axe flags those as `aria-hidden-focus`; it is a known upstream false positive
+    // (microsoft/fluentui#25133) — the sentinels are never resting focus targets and cannot be
+    // configured away.
     const arrowNav = useArrowNavigationGroup({
         axis: 'horizontal',
         circular: true,
